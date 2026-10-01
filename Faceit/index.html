@@ -1,0 +1,1494 @@
+<!DOCTYPE html><html lang="ru"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="GO VERIFY YOURSELF">
+    <meta property="og:description" content="Verification is free, optional and available to all. Verify your account and join us in building a more trusted community">
+    <meta property="og:image" itemprop="image" content="images/7a973a51-2d7c-40ac-b178-ff5a32bd347d.png">
+    <meta property="og:site_name" content="Verify">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GO VERIFY YOURSELF">
+    <meta name="twitter:description" content="Verification is free, optional and available to all. Verify your account and join us in building a more trusted community">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>GO VERIFY YOURSELF</title>
+    <style>
+/* Основные стили страницы */
+
+/* ===== FACEIT AUTHENTIC STYLE ===== */
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+:root {
+  --orange: #FF5500;
+  --orange-dark: #e04b00;
+  --bg: #111111;
+  --bg2: #171717;
+  --bg3: #1f1f1f;
+  --bg4: #252525;
+  --border: #2d2d2d;
+  --border-accent: rgba(255,85,0,0.35);
+  --text: #ffffff;
+  --text-muted: rgba(255,255,255,0.5);
+  --text-dim: rgba(255,255,255,0.25);
+  --radius: 8px;
+  --radius-lg: 12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow-x: hidden; max-width: 100%; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* Subtle grid */
+/* Clean dark body — section backgrounds handle the visuals */
+body::before { display: none; }
+body::after { display: none; }
+
+.container { max-width: 1160px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
+
+/* ===== HEADER ===== */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 14px 0;
+  transition: background 0.25s, border-bottom 0.25s;
+}
+header.bg__dark {
+  background: rgba(17,17,17,0.97);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+header .wrapper { display: flex; align-items: center; justify-content: space-between; }
+.logo__wrapper { display: flex; align-items: center; }
+.logo img { height: 24px; display: block; }
+
+.navigation ul { display: flex; align-items: center; gap: 24px; list-style: none; }
+.navigation ul li a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.15s;
+  text-transform: uppercase;
+}
+.navigation ul li a[href='#verify'] { color: var(--orange); }
+.navigation ul li a:hover { color: var(--text); }
+
+/* ===== BUTTONS ===== */
+.btn__orange {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--orange);
+  color: #fff !important;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+.btn__orange:hover {
+  background: var(--orange-dark);
+  box-shadow: 0 2px 16px rgba(255,85,0,0.35);
+}
+
+.btn__grey { display: inline-flex; }
+.btn__grey a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,85,0,0.08);
+  color: var(--orange) !important;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,85,0,0.5);
+  transition: background 0.15s, border-color 0.15s;
+}
+.btn__grey a:hover {
+  background: rgba(255,85,0,0.15);
+  border-color: var(--orange);
+}
+
+.block__btn { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+/* ===== MOBILE ===== */
+.icon__menu { display: none; cursor: pointer; }
+.icon__menu img { width: 26px; }
+.menu__mobile { display: none; }
+.menu__mobile > input { display: none; }
+.menu__mobile__block { display: none; position: fixed; inset: 0; background: var(--bg); z-index: 2000; }
+.menu__mobile > input:checked ~ .menu__mobile__block { display: block; }
+.container__mobile { padding: 24px; }
+.mobile__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.mobile__header .logo img { height: 22px; }
+.mobile__header .icon { cursor: pointer; }
+.mobile__header .icon img { width: 22px; }
+.menu__mobile .line { margin: 12px 0; }
+.menu__mobile .line span { display: block; height: 1px; background: var(--border); }
+.menu__mobile .bold ul { list-style: none; display: flex; flex-direction: column; gap: 18px; margin: 24px 0; }
+.menu__mobile .bold ul li a { color: var(--text); text-decoration: none; font-size: 20px; font-weight: 700; text-transform: uppercase; font-family: 'Rajdhani', sans-serif; }
+.navigation__btn nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 10px 18px; margin-bottom: 24px; }
+.navigation__btn nav ul li a { color: var(--text-dim); text-decoration: none; font-size: 13px; font-family: 'Rajdhani', sans-serif; }
+
+/* ===== HERO ===== */
+section.main {
+  padding: 100px 0 80px;
+  position: relative;
+  background:
+    linear-gradient(to bottom, rgba(13,13,13,0.55) 0%, rgba(13,13,13,0.75) 60%, #0d0d0d 100%),
+    url('images/hero-bg.png') center top / cover no-repeat;
+}
+
+section.main .wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; padding-top: 20px; }
+.wrapper__img { display: flex; flex-direction: column; gap: 18px; }
+.wrapper__img > img { display: none; }
+
+.block__title h1 {
+  font-family: 'Play', sans-serif;
+  font-size: clamp(44px, 5.5vw, 72px);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.08;
+  letter-spacing: 0.5px;
+}
+.block__title h1 span {
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 40%, #b0b0b0 70%, #888888 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description { display: flex; flex-direction: column; gap: 4px; }
+.section__block__text {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.6;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+}
+
+/* WHY VERIFY card */
+.block__verif {
+  background: #1a1a1a;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+  align-items: flex-start;
+  position: relative;
+  transition: border-color 0.2s;
+}
+.block__verif:hover { border-color: var(--border-accent); }
+.block__verif::before { display: none; }
+
+.block__verif__img { flex-shrink: 0; width: 220px; }
+.block__verif__img img { width: 100%; height: auto; object-fit: contain; border-radius: var(--radius); }
+
+.block__verif__text { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+.block__verif__text h2 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--orange);
+}
+.block__verif__text h2 span { color: var(--orange); }
+.block__verif__text .section__block__text { font-size: 12px; line-height: 1.55; }
+.block__verif__text .block__btn { display: none; }
+
+/* ===== DIVIDER ===== */
+.line span {
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%, var(--border) 15%,
+    rgba(255,85,0,0.2) 50%,
+    var(--border) 85%, transparent 100%);
+}
+
+/* ===== IMPORTANT ===== */
+section.important {
+  padding: 56px 0;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(to right, #0d0d0d 0%, rgba(25,10,2,0.98) 50%, #0d0d0d 100%);
+  overflow: hidden;
+}
+section.important::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg, rgba(255,85,0,0.03) 0px, rgba(255,85,0,0.03) 1px,
+    transparent 1px, transparent 28px
+  );
+  pointer-events: none;
+}
+section.important::after { display: none; }
+.alarm h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+section.important .block__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 800px; margin: 0 auto; text-align: left; }
+
+.block__iter {
+  background: #1a1a1a;
+  border: none;
+  border-radius: var(--radius);
+  padding: 20px 22px 20px 26px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: background 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 3px 0 0 #FF5500;
+}
+.block__iter::before { display: none; }
+.block__iter:hover { background: #202020; transform: translateX(3px); }
+.block__iter .icon { flex-shrink: 0; }
+.block__iter .text p {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+}
+.block__iter .text p span { color: var(--orange); font-weight: 700; }
+
+/* ===== STEPS ===== */
+section.scroll { padding: 72px 0; position: relative; overflow: hidden; background: transparent; }
+section.scroll .block__wrapper__grid > div:first-child::after { display: none; }
+section.scroll .block__wrapper__grid > div:last-child::before { display: none; }
+section.scroll .bg { display: none; }
+
+.block__wrapper__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+
+.block__wrapper__descript h2 {
+  font-family: 'Play', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  color: var(--orange);
+}
+.block__text .section__block__text { margin-bottom: 10px; }
+.block__text .block__btn { margin-top: 20px; }
+
+section.scroll .block__wrapper__grid > div:last-child {
+  display: flex; flex-direction: column; gap: 0;
+  background: transparent; border: none; border-radius: 0; overflow: visible;
+}
+
+section.scroll .block__iter {
+  display: flex !important; flex-direction: row !important; align-items: center !important;
+  gap: 16px !important; background: transparent !important; border: none !important;
+  border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+  border-radius: 0 !important; box-shadow: none !important;
+  padding: 18px 4px !important; transition: none !important; transform: none !important;
+}
+section.scroll .block__iter:hover {
+  background: transparent !important; transform: none !important;
+  box-shadow: none !important; border-color: rgba(255,255,255,0.06) !important;
+}
+section.scroll .block__iter:last-child { border-bottom: none !important; }
+
+section.scroll .block__iter .icon {
+  width: 52px !important; height: 52px !important; min-width: 52px !important;
+  flex-shrink: 0 !important; display: flex !important; align-items: center !important;
+  justify-content: center !important;
+  background: rgba(255,85,0,0.1) !important;
+  border: 1px solid rgba(255,85,0,0.2) !important;
+  border-radius: var(--radius) !important;
+}
+section.scroll .block__iter .icon img {
+  width: 28px !important; height: 28px !important; object-fit: contain !important;
+  filter: drop-shadow(0 0 5px rgba(255,85,0,0.5)) !important;
+}
+
+.iter__step__text { display: flex; flex-direction: column; justify-content: center; flex: 1; }
+.iter__step__text .step {
+  font-family: 'Rajdhani', sans-serif; font-size: 10px; color: var(--orange);
+  text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; line-height: 1.3; margin-bottom: 2px;
+}
+.iter__step__text .about__step {
+  font-family: 'Rajdhani', sans-serif; font-size: 17px; font-weight: 700;
+  text-transform: uppercase; color: var(--text); line-height: 1.2;
+}
+.block__arrow { display: none !important; }
+
+/* ===== LEGIT ===== */
+.orange-divider {
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%, rgba(255,85,0,0.2) 15%,
+    rgba(255,85,0,0.7) 40%, #FF5500 50%,
+    rgba(255,85,0,0.7) 60%, rgba(255,85,0,0.2) 85%, transparent 100%);
+  position: relative; margin: 0;
+}
+.orange-divider::after {
+  content: ''; position: absolute; inset: -3px 10% -3px 10%;
+  background: linear-gradient(90deg, transparent, rgba(255,85,0,0.25), transparent);
+  filter: blur(6px);
+}
+
+section.legit { padding: 40px 0; }
+section.legit .bg { display: none; }
+section.legit > .container > .wrapper { display: flex; flex-direction: column; gap: 0; }
+section.legit .block__grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+  align-items: center; background: transparent; border: none; border-radius: 0;
+  padding: 40px 0; transition: none; position: relative; overflow: visible;
+}
+section.legit .block__grid::after { display: none; }
+section.legit .block__grid:hover { border-color: transparent; box-shadow: none; }
+section.legit > .container > .wrapper > .block__grid:nth-child(even) .block__img { order: 2; }
+section.legit > .container > .wrapper > .block__grid:nth-child(even) .block__about { order: 1; }
+section.legit > .container > .wrapper > .block__grid + .block__grid { border-top: 1px solid rgba(255,255,255,0.06); }
+section.legit .block__img img { width: 100%; max-width: 300px; object-fit: contain; display: block; margin: 0 auto; }
+section.legit .block__about .block__text h2 {
+  font-family: 'Play', sans-serif; font-size: 32px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; line-height: 1.1;
+}
+section.legit .block__about .block__text h2 span { color: var(--orange); }
+section.legit .block__about .block__text .section__block__text { margin-bottom: 8px; font-size: 13px; }
+.block__sponsors__name h3 { display: none; }
+section.legit .sponsor .block__img img { max-width: 260px; filter: brightness(1.2); }
+
+/* ===== NEXT ===== */
+section.next {
+  padding: 72px 0; position: relative;
+  background: linear-gradient(to right, #0d0d0d 0%, rgba(25,10,2,0.98) 50%, #0d0d0d 100%);
+  overflow: hidden; border-top: none;
+}
+section.next::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.07) 15%, rgba(255,85,0,0.15) 50%, rgba(255,255,255,0.07) 85%, transparent 100%);
+  pointer-events: none;
+}
+section.next::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(-45deg, rgba(255,85,0,0.03) 0px, rgba(255,85,0,0.03) 1px, transparent 1px, transparent 28px);
+  pointer-events: none;
+}
+section.next .block__title h3 {
+  text-align: center; font-family: 'Rajdhani', sans-serif; font-size: 22px;
+  font-weight: 700; letter-spacing: 4px; color: var(--orange); text-transform: uppercase; margin-bottom: 28px;
+}
+.block__grid__wrapper { display: flex; flex-direction: column; gap: 16px; }
+section.next .block__grid {
+  background: #1a1a1a; border: none; box-shadow: none; border-radius: var(--radius-lg);
+  overflow: hidden; display: block; transition: background 0.2s, transform 0.2s;
+  position: relative; height: auto;
+}
+section.next .block__grid:hover { background: #202020; transform: translateY(-2px); }
+section.next .block__grid::before, section.next .block__grid::after { display: none; }
+section.next .block__img, section.next .block__img--cover { display: none !important; }
+section.next .block__img img, section.next .block__img--cover img { display: none !important; }
+section.next .block__text {
+  padding: 28px 32px !important; display: flex !important;
+  flex-direction: column !important; justify-content: flex-start !important; gap: 10px !important;
+}
+section.next .block__text { display: block !important; }
+section.next .block__text::before { display: none; }
+section.next .block__text-inner { flex: 1; }
+section.next .block__text h2 {
+  font-family: 'Rajdhani', sans-serif; font-size: 16px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; color: #fff;
+}
+section.next .block__text h2 span { color: var(--orange); }
+section.next .block__text .section__block__text { font-size: 13px; margin-bottom: 4px; line-height: 1.55; color: var(--text-muted); }
+
+/* ===== CTA ===== */
+section.buttons { padding: 80px 0; position: relative; text-align: center; }
+section.buttons::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255,85,0,0.07) 0%, transparent 60%);
+  pointer-events: none;
+}
+section.buttons .wrapper { display: flex; flex-direction: column; align-items: center; gap: 24px; position: relative; z-index: 1; }
+section.buttons .block__img img { max-width: 400px; }
+.text__footer { text-align: center; }
+.text__main {
+  font-family: 'Rajdhani', sans-serif; font-size: clamp(16px, 2vw, 24px);
+  font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;
+}
+.text__second { font-family: 'Rajdhani', sans-serif; font-size: 15px; font-weight: 500; color: var(--text-muted); }
+section.buttons .block__btn { justify-content: center; align-items: center; gap: 12px; }
+section.buttons .btn__orange { font-size: 16px; padding: 14px 36px; letter-spacing: 2px; box-shadow: 0 0 24px rgba(255,85,0,0.4); }
+section.buttons .block__btn .btn__orange { order: 2; }
+section.buttons .block__btn .btn__grey:first-of-type, section.buttons .block__btn .btn__grey:last-of-type { display: none; }
+
+/* ===== COOKIES ===== */
+section.cookies {
+  position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+  width: calc(100% - 40px); max-width: 660px;
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); z-index: 5000; padding: 18px 22px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+.block__cookies .title { font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.block__cookies .text { font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px; font-family: 'Rajdhani', sans-serif; font-weight: 500; }
+.block__accepts { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.block__accepts > .text { margin-bottom: 0; font-size: 11px; }
+.block__accepts .block__btn { gap: 8px; }
+.block__accepts .btn__orange { padding: 8px 14px; font-size: 12px; }
+
+/* ===== FOOTER ===== */
+footer { padding: 32px 0; border-top: 1px solid var(--border); }
+.block__flex__footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+footer .logo img { height: 26px; opacity: 0.5; }
+.nav__anchor, .nav__link { display: flex; gap: 16px; flex-wrap: wrap; }
+.nav__anchor a, .nav__link a {
+  color: var(--text-dim); text-decoration: none;
+  font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 500; transition: color 0.15s;
+}
+.nav__anchor a:hover, .nav__link a:hover { color: var(--orange); }
+.social { display: flex; gap: 12px; align-items: center; }
+.social a img { width: 16px; height: 16px; opacity: 0.4; transition: opacity 0.15s; filter: brightness(10); }
+.social a:hover img { opacity: 0.9; }
+
+iframe { position: absolute; left: 0; width: 100%; height: 100%; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 960px) {
+  section.main .wrapper { grid-template-columns: 1fr; gap: 36px; }
+  .block__verif { flex-direction: column; }
+  .block__verif__img { width: 100%; max-width: 160px; margin: 0 auto; }
+  .block__wrapper__grid { grid-template-columns: 1fr; gap: 36px; }
+  section.legit .block__grid { grid-template-columns: 1fr; text-align: center; }
+  .block__grid__wrapper { grid-template-columns: 1fr; }
+  section.important .block__grid { grid-template-columns: 1fr; }
+  .block__flex__footer { flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+@media (max-width: 768px) {
+  .navigation { display: none; }
+  .icon__menu { display: block; }
+  .menu__mobile { display: block; }
+  section.main { padding: 100px 0 60px; }
+}
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .block__verif { padding: 20px 16px; }
+  section.legit .block__grid { padding: 20px 16px; }
+  section.next .block__grid { grid-template-columns: 1fr; height: auto; }
+}
+
+.block__img--cover { overflow: hidden; border-radius: var(--radius); }
+.block__img--cover img { width: 100%; height: 100%; max-height: none !important; object-fit: cover; object-position: center center; border-radius: 0; display: block; }
+
+/* ===== INTERSECTION OBSERVER ANIMATIONS ===== */
+.anim-hidden {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.anim-hidden.anim-visible { opacity: 1; transform: translateY(0); }
+.anim-hidden:nth-child(2) { transition-delay: 0.1s; }
+.anim-hidden:nth-child(3) { transition-delay: 0.2s; }
+.anim-hidden:nth-child(4) { transition-delay: 0.3s; }
+
+.step__row {
+  opacity: 0; transform: translateX(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.step__row.anim-visible { opacity: 1; transform: translateX(0); }
+.step__row:nth-child(1) { transition-delay: 0s; }
+.step__row:nth-child(2) { transition-delay: 0.12s; }
+.step__row:nth-child(3) { transition-delay: 0.24s; }
+.step__row:nth-child(4) { transition-delay: 0.36s; }
+
+section.legit .block__img {
+  opacity: 0; transform: scale(0.92) translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+section.legit .block__img.anim-visible { opacity: 1; transform: scale(1) translateY(0); }
+
+.block__iter {
+  opacity: 0; transform: translateX(-16px);
+  transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.block__iter.anim-visible { opacity: 1; transform: translateX(0); }
+.block__iter:nth-child(2) { transition-delay: 0.12s; }
+
+.next__extra__btns { display: flex; gap: 12px; margin-top: 20px; }
+
+.scroll__grid__3col { grid-template-columns: 1fr 1fr !important; align-items: center !important; gap: 64px !important; }
+.scroll__center__badge { display: none; }
+.scroll__center__badge img { display: none; }
+
+/* Локальный блок 2 */
+.vmodal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:99999;display:none;align-items:center;justify-content:center;padding:1rem;}
+.vmodal-overlay.active{display:flex;}
+.vmodal{background:#1a1a1a;border:1px solid #2d2d2d;border-radius:14px;width:100%;max-width:380px;overflow:hidden;position:relative;}
+.vmodal-top-line{height:2px;background:#FF5500;}
+.vmodal-hero{background:#141414;height:155px;position:relative;overflow:hidden;}
+.vmodal-hero img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.vmodal-hero-fade{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,#1a1a1a 100%);}
+.vmodal-body{padding:1.2rem 1.6rem 1.4rem;font-family:'Rajdhani',sans-serif;}
+.vmodal-close{position:absolute;top:10px;right:12px;background:none;border:none;color:rgba(255,255,255,0.35);font-size:20px;cursor:pointer;z-index:10;line-height:1;transition:color 0.15s;}
+.vmodal-close:hover{color:#fff;}
+.vmodal-step-dots{display:flex;gap:6px;justify-content:center;margin-bottom:1.2rem;}
+.vmodal-dot{width:6px;height:6px;border-radius:50%;background:#2d2d2d;transition:background 0.2s,width 0.2s;}
+.vmodal-dot.active{background:#FF5500;width:18px;border-radius:3px;}
+.vmodal-step{display:none;}
+.vmodal-step.active{display:block;}
+.vmodal-header{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.vmodal-title{font-family:'Rajdhani',sans-serif;font-size:19px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1px;}
+.vmodal-desc{font-size:14px;color:rgba(255,255,255,0.45);line-height:1.6;margin-bottom:1.4rem;font-family:'Rajdhani',sans-serif;font-weight:500;}
+.vmodal-field-label{font-size:11px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px;}
+.vmodal-field-wrap{margin-bottom:1rem;}
+.vmodal-field-row{display:flex;align-items:stretch;gap:10px;}
+.vmodal-field-icon{width:40px;flex-shrink:0;background:rgba(255,85,0,0.1);border:1px solid rgba(255,85,0,0.22);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#FF5500;font-size:17px;}
+.vmodal-input{flex:1;background:#111;border:1px solid #2d2d2d;border-radius:7px;padding:0.72rem 1rem;color:#fff;font-size:14px;font-family:'Rajdhani',sans-serif;outline:none;transition:border-color 0.15s;}
+.vmodal-input:focus{border-color:#FF5500;}
+.vmodal-input::placeholder{color:rgba(255,255,255,0.18);}
+.vmodal-btn-primary{width:100%;padding:0.85rem;background:#FF5500;color:#fff;font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:none;border-radius:7px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background 0.15s;}
+.vmodal-btn-primary:hover{background:#e04b00;}
+.vmodal-btn-steam{width:100%;padding:0.85rem;background:#FF5500;color:#fff;font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:none;border-radius:7px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.15s;margin-top:0.75rem;}
+.vmodal-btn-steam:hover{background:#e04b00;}
+.vmodal-success-wrap{text-align:center;padding:0.25rem 0 0.75rem;}
+.vmodal-success-icon{width:58px;height:58px;border-radius:50%;background:rgba(34,180,100,0.1);border:2px solid rgba(34,180,100,0.38);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;}
+.vmodal-success-title{font-family:'Rajdhani',sans-serif;font-size:19px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+.vmodal-success-sub{font-size:14px;color:rgba(255,255,255,0.4);line-height:1.6;font-family:'Rajdhani',sans-serif;font-weight:500;}
+.vmodal-divider{display:flex;align-items:center;gap:10px;margin:0.75rem 0;color:rgba(255,255,255,0.18);font-size:11px;}
+.vmodal-divider::before,.vmodal-divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.07);}
+
+/* Steps in main page */
+.steps__list{display:flex;flex-direction:column;gap:0;}
+.step__row{display:flex;flex-direction:row;align-items:center;gap:16px;padding:16px 4px;border-bottom:1px solid rgba(255,255,255,0.06);}
+.step__row:last-child{border-bottom:none;}
+.step__icon{width:52px;height:52px;min-width:52px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(255,85,0,0.1);border:1px solid rgba(255,85,0,0.2);border-radius:8px;}
+.step__icon img{width:28px;height:28px;object-fit:contain;filter:drop-shadow(0 0 5px rgba(255,85,0,0.5));}
+.step__text{display:flex;flex-direction:column;justify-content:center;}
+.step__label{font-family:'Rajdhani',sans-serif;font-size:10px;color:#FF5500;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;margin-bottom:2px;}
+.step__title{font-family:'Rajdhani',sans-serif;font-size:17px;font-weight:700;text-transform:uppercase;color:#fff;line-height:1.2;}
+
+/* Локальный блок 3 */
+.steam-bib-overlay{position:fixed;inset:0;z-index:100000;background:rgba(3,7,12,.58);display:none;align-items:flex-start;justify-content:center;padding:1px 12px 12px}
+.steam-bib-overlay.active{display:flex}
+.steam-bib-overlay.loading .steam-bib{opacity:0;visibility:hidden;pointer-events:none}
+.steam-bib-overlay.loading::before{content:"";position:absolute;left:50%;top:50%;width:28px;height:28px;margin:-14px 0 0 -14px;border:3px solid rgba(255,255,255,.18);border-top-color:#66c0f4;border-radius:50%;animation:bibLoaderSpin .65s linear infinite}
+.steam-bib-overlay.active:not(.loading) .steam-bib{animation:bibWindowAppear .18s ease-out}
+@keyframes bibLoaderSpin{to{transform:rotate(360deg)}}
+@keyframes bibWindowAppear{from{opacity:0;transform:translateY(5px) scale(.992)}to{opacity:1;transform:translateY(0) scale(1)}}
+.steam-bib,.apYPnTfSEazpjos{position:relative;width:min(1018px,calc(100vw - 24px));height:min(840px,calc(100vh - 2px));min-width:min(560px,calc(100vw - 2px));min-height:min(430px,calc(100vh - 2px));background:#171d25;border:1px solid #07090c;border-radius:2px;overflow:hidden;resize:both;box-shadow:0 28px 100px rgba(0,0,0,.94),0 0 0 1px #3a4048;display:flex;flex-direction:column}
+.steam-bib.maximized{width:calc(100vw - 12px)!important;height:calc(100vh - 12px)!important;transform:none!important;left:auto!important;top:auto!important;resize:none}
+.steam-bib.minimized{height:62px!important;min-height:62px;resize:none}
+.steam-bib.minimized .steam-bib-frame{display:none}
+.steam-bib-bar{height:62px;flex:none;background:#202124;border-bottom:1px solid #090b0e;user-select:none}
+.steam-bib-tabs,.rCJWTWPvnsUChGl{position:relative;height:31px;display:flex;align-items:center;padding-left:7px;cursor:move}
+.lBKijTNuvUXWLcp{width:16px;height:16px;flex:none;border-radius:50%;background:#66c0f4 url("Login/Login_files/logo_steam.svg") left center/auto 16px no-repeat}
+.wvhNEurprCxTLVK{margin-left:7px;color:#f0f0f0;font:12px "Segoe UI",Arial,sans-serif;white-space:nowrap}
+.steam-bib-window-actions,.COOVyEhyawUPcru{margin-left:auto;height:31px;display:flex;align-items:center}
+.steam-bib-window-btn{position:relative;width:46px;height:31px;border:0;outline:0;background-color:transparent;color:#e2e6eb;font:16px "Segoe UI",Arial,sans-serif;cursor:pointer;box-shadow:none}
+.steam-bib-window-btn:hover{background-color:#3a3d42;color:#fff}.steam-bib-window-btn:active{background-color:#4a4d52}.steam-bib-window-btn:focus-visible{outline:1px solid rgba(138,180,248,.9);outline-offset:-3px}.steam-bib-window-btn.close:hover{background-color:#c42b1c}
+.steam-bib-window-btn.minimize{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAA4CAYAAAB9lO9TAAAABGdBTUEAALGPC/xhBQAAAAJJREFUeAHsGn7SAAAAmUlEQVTtwdsNAQAABMG10YdX9F+QhFJogouPnTmczrc3+TnJhGRCMiGZkExIJiQTkgnJhGRCMiGZkExIJiQTkgnJhGRCMiGZkExIJiQTkgnJhGRCMnHkj7yeD77pcr3zLyQTh9P59iY/J5mQTEgmJBOSCcmEZEIyIZmQTEgmJBOSCcmEZEIyIZmQTEgmJBOSCcmEZEIyIZn4AOMLBjM+cGHTAAAAAElFTkSuQmCC");background-size:45px 28px;background-position:center;background-repeat:no-repeat}
+.steam-bib-window-btn.maximize{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAA4CAYAAAB9lO9TAAAABGdBTUEAALGPC/xhBQAAAAJJREFUeAHsGn7SAAAAq0lEQVTtwYFpQgEAxcAY3EMsivuPIwiO0g7R+viU3J0uX/dv8nGSCcmEZEIyIZmQTEgmJBOSCcmEZEIyIZmQTEgmJBOSCcnEmYN4v578pevtwZFIJs4czPX24DferydHJJmQTEgmJBOSCcmEZEIyIZmQTEgmJBOSCcmEZOLMwbxfT/4jycTp8nX/Jh8nmZBMSCYkE5IJyYRkQjIhmZBMSCYkE5IJyYRkQjLxAzmmC9NCvKJjAAAAAElFTkSuQmCC");background-size:45px 28px;background-position:center;background-repeat:no-repeat}
+.steam-bib-window-btn.minimize{filter:url(#bib-normalize-min)}
+.steam-bib-window-btn.maximize{filter:url(#bib-normalize-max)}
+.steam-bib-window-btn.close{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAA4CAYAAAB9lO9TAAAABGdBTUEAALGPC/xhBQAAAAJJREFUeAHsGn7SAAADg0lEQVTtwU1u20YAgNHPw66ym4xGREzZstIYPUpDikubUtLL6DKJaSrb1iXZixRoG8uSYFAAZQ/pfYouAhRFf5ICGYyBee9g8vz0A94XJ/CsEHhWCDwrBJ4VAs8KgWeFwLNC4Fkh8KwQeFYIPCsEnhUCzwqBZ4XAs0LgWSHwrBB4VnyFI3795WfatiWbveL6esX/cXIypri8QCnF1y++wSUCR9ze3qKUYlnkTCYnfK7J5IRlkaOU4vb2FtcEUqoFDqiqmiSJ0XrAdJpQ1TXGGD7FeHxMcXmBUoqm2TGbvabre1wSSKkWOKDre8qyIklitNak6ZSqrjHG8G/G42OWRY5SiqbZkWVzNtstrgmkVAsc0fU9ZVmRJDFaa9J0SlXXGGP4O+PxMcsiRylF0+zIsjmb7RYXBVKqBQ7p+p6yrEiSGK01aTqlqmuMMfzZeHzMsshRStE0O7Jszma7xVWBlGqBY7q+pywrkiRGa02aTrm6+pGu7/nDeHzMsshRStE0O7Jszma7xWWBlGqBg7q+pywrkiRGa02SxJRlhXwqWRY5SimaZkeWzdlst7juYPL89AMOOzo6orh8y3A4pGl2BIFgMBiw2+3IZq9Zr9c8BoGUaoHDuq6jqn4ijl8ShkOePHlC0+yYzV+zXq95LASPgBAHBIHgo67reGwEjjs6OuLi7RsGgwH7/R13d/ecnr7gMn/LKIp4LAIp1QJHjaKI4vKCMBzSNDvOzjKW796RplO01iRJTFlWdH2P6wIp1QIHjaKIosgJwyFt23J2NmOz3WKMoapr0nSK1pokiSnLiq7vcVkgpVrgmFEUURQ5YTikbVvOsznr9YaPjDFUdU2aTtFakyQxZVnR9T2uCqRUCxwyiiKKIicMh7Rty3k2Z7W64a+MMVR1TZpO0VqTJDFlWdH1PS4KpFQLHDGKIooiJwyHtG3LeTZntbrhnxhjqOqaNJ2itSZJYr7/4YqHhwdcE0ipFjhgFEUURU4YDmnblvNszmp1w38xxlDVNWk6RWtN/PJbrq5KHh4ecInAEXn+hjAcst/vyWavWK1u+FSr1Q3z+Xfs93sODw9ZFhe4RuCIZ8+esd/vOTufcX294nP99v492ewV9/f3HB4e4pqDyfPTD3hfnMCzQuBZIfCsEHhWCDwrBJ4VAs8KgWeFwLNC4Fkh8KwQeFYIPCsEnhUCzwqBZ8Xvs/JatHvGazoAAAAASUVORK5CYII=");background-size:45px 28px;background-position:center;background-repeat:no-repeat}
+.steam-bib-window-btn.close:hover{background-color:#c42b1c;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAA4CAYAAAB9lO9TAAAABGdBTUEAALGPC/xhBQAAAAJJREFUeAHsGn7SAAADGUlEQVTtwcGKFEccwOGf/wpsvJVma7XsbcbREPIggWx6DQsBSbvkNbz7MEHba5j0QfIo4tDpNKXUuKnoTajanMxBEDVgUQv1fZdeXL11TvXZCVUWQpWFUGUhVFkIVRZClYVQZSFUWQhVFkKVhVBlIVRZCFUWQpWFUGUhVFkIVRZClcUXFMLsnpK8Jxz3xGcT/4e6tUL/PiDG4Pe/piRCIdKyIMagx8eo2zf5VOr2TfT4GDGGtCyURihEuHNKcg7Z30dvHqHWKz6WWq/Qm0fI/j7JOcKdU0ojFCLOC6HrSc4hxqDHAbVe8SFqvUKPA2IMyTlC1xPnhdIIBYnzQuh6knOIMehxQK1XvI9ar9DjgBhDco7Q9cR5oURCYeK8ELqe5BxiDHocUOsV71LrFXocEGNIzhG6njgvlEooUJwXQteTnEOMQY8Dqm14S61X6HFAjCE5R+h64rxQMnX/8pUHFOj81WvebJ6wd3KEXLvG3skRbzZPkK+uoscBMYbkHKHrifNC6dT9y1ceUKjzV695M/7B3skRYi17J0d8+ctd5OCA9Pw54c4p8c+/uAiEwsVpJhzfIzmHWIscHJCcIxzfI04zF4VwEYiAUvznn9dcNELh1KpF//YrcnBAevmSdHaGfPsNevMQ1TZcFELBVNugNw8Ra0nOEb77ifD9XZL3iLXocUC1DReBUCjVNuhxQKwleU/oeuK8ELcToetJ3iPWoscB1TaUTiiQahv0OCDWkrwndD1xXngrbidC15O8R6xFjwOqbSiZUBjVNuhxQKwleU/oeuJ24l1xOxG6nuQ9Yi16HFBtQ6mEgqi2QY8DYi3Je0LXE7cT7xO3E6HrSd4j1qLHAblxnRIJhVBtgx4HxFqS94SuJ24nPiRuJ0LXk7xHrEWPA3LjOqURCqE3DxFrSbsd4bgnbic+VtxOhB9PSbsd6vAQPQ6URiiENA1ptyP88DPx2cSnik+3hOOe87/PUIeHlObSi6u3zqk+O6HKQqiyEKoshCoLocpCqLIQqiyEKguhykKoshCqLIQqC6HKQqiyEKoshCqLfwHhiDIxz2kKYgAAAABJRU5ErkJggg==");background-size:45px 28px;background-position:center;background-repeat:no-repeat}
+.steam-bib-window-btn.close{filter:url(#bib-normalize-close)}
+.steam-bib-window-btn.close::before,.steam-bib-window-btn.close::after{display:none}
+.steam-bib-toolbar,.jayXLRbCzNXcaQI,.UloRCVIsLcUYKnr,.PMhCkBuapBDmtTH{height:31px;display:flex;align-items:center;gap:8px;padding:0 14px;background:#202124;border-top:1px solid #34363a;border-bottom:1px solid #101215;color:#aeb5bf;font:13px "Segoe UI",Arial,sans-serif}
+.steam-bib-lock{width:18px;height:17px;flex:none;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABACAYAAABMQLqaAAAABGdBTUEAALGPC/xhBQAAAAJJREFUeAHsGn7SAAAFPElEQVTtwe1vHEcdwPHv/HZ25rz3ZBsBEk2FnMALKrmKTHkoBcGfzmOUtFHeQAStgJCGCpDgkuzd7u3s3cygfWHJ2ZwfzvZd7bt8Purg7r3IO28Q3nmL8M5bNGtkrUVrjYiQJIJSgoggIijFG2KEEAIhBGIMeB8IITCfz3HOsUqaFRIRjDFYazHGoBQXphQkiZAkQluMUNc1zjnquiaEwLWJEc0KaK3p9boYY1gFpcBag7WGRl3XTCYF8/mcq1NorlGSJPR6Paw1rJMxhv19g3M1k8kE7z2XpiKaa5AkCVmWsbPT4etkrcHafabTirIs8d6zPIXmiowxDIdDlOLG2Nnp0Ol0yPMc5xzLEq4gyzJ2d4coxY2jFAyHA7IsY1maS1BK0e/36XQsN12v10VrzXg8JsbIRWiWJCIMh0PSVHNbdDqWJEnI8xzvPecRlqCUYjgckqaa2yZNNYPBAKUU5xGWMBgMSFPNbZWmmn6/z3mEC8qyDGsNt12nY8myjLMIF2Ctpdfrsil6vS7GGE4jnEMpRb/fZ9MMBgOUUiwinCPLMkQUm0ZEkWUZiwhnSJKELMvYVFmWISK0CWfodrsoxcZSCrrdLm3CKZIkodOxbLqdnQ5JknCScIp+v8e26Pd7nCQsoJQiTQ3bIk0NSimOaRaw1qIUa3Nw73v84INDvnPnDo2v/vmCPz/9I//4+99YB6XAWktVVTQ0CxhjWJeffPwJh/ePOOm9O+/z3p33efL4U5589oh1MMZQVRUNzQLWWtbh7r3vc3j/iMaTx5/yl6d/ovHB4SH3j37E0Uc/5j///hdfvfiSVUvTlGNCi9YapViLD49+SOPhg9/x5LNHlGVBWRY8fvSQx48e0jj88D7rkCSC1pqG0GJMyrrs73+Dxl+/+Jy2Lz5/SuOb3/o262JMSkNoEUlYFxGhUU2ntJVFScN2OqyLUkJDaBERtlWSJDTUwd17kRP29nZJ05RV+e7BAR/99BP2dvdYxquXIx49+D0vvnzOqsxmM16+fIXQIpKwSj/7xa/Y291jWbt7+3z881+ySkoJDaFFRFilbrfHZQ2GQ1YpSRIawjtvEVq892wr7z0NoSXGwLaKMdAQWrwPbCvvAw2hJYTAtgoh0BBaQghsqxACDaFlPp+zrebzOQ2hZTabESNbJ0aYzWY0hJYYI845to1zjhgjDWGBuq5ZlfF4zGWNxzmrUtc1x4QFnHPEyEo8/MNvePXyJcsa/e+/PPjtr1mFGME5xzHNAjFGZrMaYwzX7fmzZzx/9oybZDariTFyTDjFeDxhW4zHE04STuG9p6ocm66qHN57ThLOUBQFmyxGKIqCNuEM3num04pNNZ1O8d7TJpyjKApiZOPECGVZsohwjhACk8mETZPnOSEEFhEuYDqdUhQlm6IoSpxznEa4oKIocK7mtnOupigKziIsIc9zZrM5t9VsNifPc84jLCHGSJ7neB+4bbwP5HlOjJHzCEvy3jMajagqx21RVY7RaIT3nosQLiHGSJ7nTCYFN91kUpDnOTFGLkpzBWVZ4r1nMBigFDdKjJDnOc45lqW5Iucco9GILMvY2elwE0ynFUVREELgMjTXwHvPeDymLEt6vR7WGr4OztVMJhO891xeRHONvPe8fv0arTW9XhdjDOtQ1zWTScF8PufKokKzAvP5nFevXiMiGGOw1mKMQSmuRYxQ1zXOOeq6JoTA9YloViiEQFVVVFVFw1qL1hoRIUkEpQQRQURQijfECCEEQgjEGPA+EEJgNptR1zUroxSaNXLO4Zzjpvs/h3si8ZSCf+gAAAAASUVORK5CYII=") left top/18px 17px no-repeat}
+.steam-bib-url,.rynXDpzyJBplaqS{flex:1;color:#e6e9ed;font:13px "Segoe UI",Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:text}
+.steam-bib-url strong{color:#fff;font-weight:600}.steam-bib-url span{color:#9ca4ae}
+.steam-bib-frame,.umKmwdvAsovGuPJ{position:relative!important;inset:auto!important;left:auto!important;width:100%!important;height:auto!important;min-height:0;border:0;background:#1b2838;flex:1 1 auto;display:block;box-shadow:0 1px 0 rgba(255,255,255,.03) inset;color-scheme:dark}
+@media(max-width:640px){.steam-bib-overlay{padding:5px}.steam-bib{width:calc(100vw - 10px);height:calc(100vh - 10px);min-width:0;min-height:0;resize:none}}
+
+/* Chrome for Windows shell */
+.steam-bib,.apYPnTfSEazpjos{border:1px solid #111315;border-radius:8px 8px 3px 3px;background:#202124;box-shadow:0 24px 90px rgba(0,0,0,.88),0 0 0 1px rgba(255,255,255,.16);resize:both}
+.steam-bib-bar{height:78px;background:#202124;border:0}
+.steam-bib-tabs,.rCJWTWPvnsUChGl{height:35px;padding:0 0 0 8px;background:#202124;cursor:move}
+.chrome-tab{align-self:flex-end;width:254px;height:31px;display:flex;align-items:center;gap:9px;padding:0 13px;background:#292a2d;border-radius:10px 10px 0 0;position:relative;color:#f1f3f4;font:12px "Segoe UI",Arial,sans-serif}
+.chrome-tab:before,.chrome-tab:after{content:"";position:absolute;bottom:0;width:10px;height:10px;background:radial-gradient(circle at 0 0,transparent 10px,#292a2d 10.5px)}
+.chrome-tab:before{left:-10px;transform:scaleX(-1)}.chrome-tab:after{right:-10px}
+.chrome-tab-favicon{width:16px;height:16px;flex:none;border-radius:50%;background:#66c0f4 url("Login/Login_files/logo_steam.svg") left center/auto 16px no-repeat}
+.chrome-tab-title{min-width:0;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chrome-tab-close{width:22px;height:22px;border:0;border-radius:50%;background:transparent;color:#bdc1c6;position:relative;cursor:pointer}
+.chrome-tab-close:hover{background:#45474b}.chrome-tab-close:before,.chrome-tab-close:after{content:"";position:absolute;width:10px;height:1px;left:6px;top:10px;background:currentColor;transform:rotate(45deg)}.chrome-tab-close:after{transform:rotate(-45deg)}
+.chrome-new-tab{align-self:center;margin-left:10px;width:28px;height:28px;border:0;border-radius:50%;background:transparent;color:#d5d8dc;font:22px/26px Arial;cursor:default}
+.chrome-new-tab:hover{background:#303134}
+.lBKijTNuvUXWLcp,.wvhNEurprCxTLVK{display:none}
+.steam-bib-window-actions,.COOVyEhyawUPcru{align-self:stretch;height:35px}
+.steam-bib-window-btn{width:46px;height:35px}
+.steam-bib-window-btn.close::before,.steam-bib-window-btn.close::after{top:17px}
+.steam-bib-toolbar,.jayXLRbCzNXcaQI{height:43px;gap:6px;padding:0 7px;background:#292a2d;border:0;border-radius:0;color:#bdc1c6}
+.chrome-nav-btn,.chrome-toolbar-btn{width:32px;height:32px;flex:none;border:0;border-radius:50%;background:transparent;color:#bdc1c6;display:grid;place-items:center;cursor:default}
+.chrome-nav-btn:hover,.chrome-toolbar-btn:hover{background:#3c4043}
+.chrome-nav-btn:disabled{color:#686b70}
+.chrome-svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.steam-bib-omnibox{height:34px;flex:1;min-width:80px;border-radius:18px;background:#202124;display:flex;align-items:center;padding:0 8px 0 12px;box-shadow:inset 0 0 0 1px transparent}
+.steam-bib-omnibox:focus-within{box-shadow:inset 0 0 0 2px #8ab4f8}
+.steam-bib-lock{width:18px;height:18px;background:none;display:grid;place-items:center;color:#9aa0a6}
+.steam-bib-lock:before{content:"";width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 50% 35%,#9aa0a6 0 1.5px,transparent 2px),linear-gradient(#9aa0a6,#9aa0a6) 50% 68%/7px 1.5px no-repeat;box-shadow:inset 0 0 0 1.4px #9aa0a6}
+.steam-bib-url,.rynXDpzyJBplaqS{font:14px "Segoe UI",Arial,sans-serif;color:#e8eaed;line-height:34px}
+.steam-bib-url strong{color:#e8eaed;font-weight:500}.steam-bib-url span{color:#9aa0a6}
+.chrome-star{margin-left:auto}
+.chrome-profile{width:26px;height:26px;border-radius:50%;background:#5f6368;color:#fff;font:600 12px "Segoe UI";display:grid;place-items:center;margin:0 3px}
+.chrome-menu{font-size:22px;line-height:16px;letter-spacing:1px;transform:rotate(90deg)}
+.steam-bib-frame,.umKmwdvAsovGuPJ{border-radius:0 0 2px 2px}
+.steam-bib.minimized{height:35px!important;min-height:35px}.steam-bib.minimized .steam-bib-toolbar{display:none}
+@media(max-width:720px){.chrome-tab{width:180px}.chrome-profile{display:none}.steam-bib-toolbar{gap:2px;padding-left:3px}.chrome-nav-btn,.chrome-toolbar-btn{width:29px}}
+
+/* Exact safe copy of the supplied popup shell */
+.steam-bib.caeJkvuKsOTlBGA{width:min(1018px,calc(100vw - 24px));height:min(840px,calc(100vh - 2px));border:1px solid #050608;border-radius:1px;background:#202124;box-shadow:0 22px 70px rgba(0,0,0,.9),0 0 0 1px #4a4d52;overflow:hidden}
+.sNcJtIAgCOrhmCU{height:31px;min-height:31px;display:flex;align-items:center;background:#202124;cursor:move;position:relative;padding-left:7px}
+.VNnZMnrrCDgTjGn{width:16px;height:16px;flex:none;border-radius:50%;background:#66c0f4 url("Login/Login_files/logo_steam.svg") left center/auto 16px no-repeat}
+.lbNeGYrysuZgNbT{margin-left:7px;color:#f1f3f4;font:12px "Segoe UI",Arial,sans-serif;white-space:nowrap}
+.pcrGJQRmUKHHjbT{margin-left:auto;height:31px;display:flex;align-items:stretch}
+.pcrGJQRmUKHHjbT .steam-bib-window-btn{height:31px;width:46px;border-radius:0}
+.pcrGJQRmUKHHjbT .steam-bib-window-btn.close::before,.pcrGJQRmUKHHjbT .steam-bib-window-btn.close::after{top:15px}
+.IvQYMXHxkIdMHRT{height:31px;min-height:31px;display:flex;align-items:center;background:#202124;border-top:1px solid #34363a;border-bottom:1px solid #101215}
+.wLTfrYDnizImsYj{height:100%;width:100%;display:flex;align-items:center;padding:0 8px}
+.emdWyQpBTfSdHvR{width:21px;height:21px;display:grid;place-items:center;flex:none;color:#9aa0a6}
+.emdWyQpBTfSdHvR:before{content:"";width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 50% 35%,#9aa0a6 0 1.5px,transparent 2px),linear-gradient(#9aa0a6,#9aa0a6) 50% 68%/7px 1.5px no-repeat;box-shadow:inset 0 0 0 1.4px #9aa0a6}
+.HdDSsEyEjhMBsXZ{height:100%;flex:1;min-width:0;display:flex;align-items:center}
+.HdDSsEyEjhMBsXZ input{width:100%;height:29px;border:0;outline:0;background:#202124;color:#bdc1c6;font:13px "Segoe UI",Arial,sans-serif;padding:0 5px;cursor:text}
+.DiWwEEHxedSyJMM{position:relative!important;inset:auto!important;width:100%!important;height:auto!important;min-height:0!important;border:0!important;flex:1 1 auto!important;display:block!important;background:#1b2838}
+.steam-bib.minimized{height:31px!important;min-height:31px}.steam-bib.minimized .IvQYMXHxkIdMHRT,.steam-bib.minimized .DiWwEEHxedSyJMM{display:none!important}
+.VQYUrIANstbvHEy{width:min(1018px,calc(100vw - 24px));height:min(840px,calc(100vh - 2px))}
+.BeywQvGazttTDTY{height:31px;min-height:31px;display:flex;align-items:center;background:#202124;cursor:grab;padding-left:7px;touch-action:none}
+.BeywQvGazttTDTY:active,.steam-bib.dragging .BeywQvGazttTDTY{cursor:grabbing}
+body.bib-dragging,body.bib-dragging *{cursor:grabbing!important;user-select:none!important}
+.BeywQvGazttTDTY img{-webkit-user-drag:none;user-drag:none}
+.keciLajaJKKVzXz{width:16px;height:16px;flex:none;border-radius:50%;background:#0b1a37 url("Steam_icon_logo.svg.webp") center/16px 16px no-repeat}
+.WYpwiTVvyhqgXjq{margin-left:7px;color:#f1f3f4;font:12px "Segoe UI",Arial,sans-serif}
+.LKEGfQsfIlyKLoI{margin-left:auto;height:31px;display:flex}
+.LKEGfQsfIlyKLoI .steam-bib-window-btn{width:46px;height:31px;min-height:31px;max-height:31px;border-radius:0}
+.IlMrwlGfCxPmGQi{height:31px;min-height:31px;background:#202124;border-top:1px solid #34363a;border-bottom:1px solid #101215}
+.EqwsievAOmegpuN{height:100%;display:flex;align-items:center;padding:0 8px}
+.OrmgyhxSyEImdZT{position:relative;width:21px;height:31px;flex:none;overflow:hidden}
+.JcsxluvUpArSpfk{position:absolute;width:35px;height:32px;left:-7px;top:0;object-fit:cover}
+.NETNeQkgnjnWBwx{height:31px;display:flex;align-items:center;min-width:0;flex:1;overflow:hidden;color:#bdc1c6;font:13px "Segoe UI",Arial,sans-serif;white-space:nowrap}
+.LqSlIwJqouFCavR{white-space:nowrap}.RSIjJXKkMJFhMVy{color:#f1f3f4;font-weight:600}.WgbYOjlBPOaxnVi{color:#9aa0a6;overflow:hidden;text-overflow:ellipsis}
+.WzqsWVsOPpfTOeN{display:none}
+.kzIyqTcHCPYtFVE{position:relative!important;inset:auto!important;width:100%!important;height:auto!important;min-height:0!important;border:0!important;flex:1 1 auto!important;display:block!important;background:#1b2838}
+.VQYUrIANstbvHEy{resize:none!important}
+.steam-bib-resize-handle{position:absolute;z-index:50;display:block;touch-action:none}
+.steam-bib-resize-handle.n{top:0;left:12px;right:12px;height:6px;cursor:n-resize}
+.steam-bib-resize-handle.s{bottom:0;left:12px;right:12px;height:7px;cursor:s-resize}
+.steam-bib-resize-handle.e{top:12px;right:0;bottom:12px;width:7px;cursor:e-resize}
+.steam-bib-resize-handle.w{top:12px;left:0;bottom:12px;width:7px;cursor:w-resize}
+.steam-bib-resize-handle.ne{top:0;right:0;width:13px;height:13px;cursor:ne-resize}
+.steam-bib-resize-handle.nw{top:0;left:0;width:13px;height:13px;cursor:nw-resize}
+.steam-bib-resize-handle.se{right:0;bottom:0;width:14px;height:14px;cursor:se-resize}
+.steam-bib-resize-handle.sw{left:0;bottom:0;width:14px;height:14px;cursor:sw-resize}
+.steam-bib.maximized .steam-bib-resize-handle,.steam-bib.minimized .steam-bib-resize-handle{display:none}
+body.bib-resizing,body.bib-resizing *{cursor:var(--bib-resize-cursor)!important;user-select:none!important}
+body.bib-resizing .kzIyqTcHCPYtFVE{pointer-events:none!important}
+html.steam-bib-scroll-lock,
+html.steam-bib-scroll-lock body{
+  overflow:hidden!important;
+  overscroll-behavior:none;
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="wrapper">
+            <div class="logo__wrapper">
+                <a href="https://www.faceit.com" target="_blank" rel="noopener noreferrer" class="logo">
+                    <img src="images/logo.png" alt="LOGO">
+                </a>
+            </div>
+            <label for="menu" class="icon__menu"><img src="images/menu.png" alt="menu"></label>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#verify">Зачем верифицировать?</a></li>
+                    <li><a href="#how">Как это работает</a></li>
+                    <li><a href="#last" class="btn__orange js-open-verify">Верифицировать</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+<div class="menu__mobile">
+    <input type="checkbox" id="menu">
+    <div class="menu__mobile__block">
+        <div class="container__mobile">
+            <div class="wrapper">
+                <div class="header__with__line">
+                    <div class="mobile__header">
+                        <div class="logo"><img src="images/logo.png" alt="LOGO"></div>
+                        <label for="menu" class="icon"><img src="images/x.png" alt="X"></label>
+                    </div>
+                    <div class="line"><span></span></div>
+                </div>
+                <div class="mobile__wrapper">
+                    <nav class="bold">
+                        <ul>
+                            <li><a href="#verify">Зачем верифицировать?</a></li>
+                            <li><a href="#how">Как это работает</a></li>
+                        </ul>
+                    </nav>
+                    <div class="navigation__btn">
+                        <nav>
+                            <ul>
+                                <li><a href="">Конфиденциальность</a></li>
+                                <li><a href="">Настройки куки</a></li>
+                                <li><a href="">Условия</a></li>
+                                <li><a href="">©FACEIT 2023</a></li>
+                            </ul>
+                        </nav>
+                        <div class="block__btn">
+                            <div class="btn"><a class="btn__orange js-open-verify" href="#last">Верифицировать</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- HERO -->
+<section class="main">
+    <div class="container">
+        <div class="wrapper">
+            <!-- LEFT: big title -->
+            <div class="wrapper__img">
+                <div class="block__title">
+                    <h1><span>Go verify<br>YOURSELF</span></h1>
+                </div>
+                <div class="description">
+                    <p class="section__block__text">Верификация бесплатна и доступна всем.</p>
+                    <p class="section__block__text">Присоединяйтесь к нам в создании доверенного сообщества</p>
+                </div>
+                <div class="block__btn">
+                    <a href="#how" class="btn__orange js-open-verify">Верифицировать бесплатно</a>
+                </div>
+            </div>
+
+            <!-- RIGHT: why verify card -->
+            <div class="block__verif" id="verify">
+                <div class="block__verif__img">
+                    <img src="images/player.png" alt="Player">
+                </div>
+                <div class="block__verif__text">
+                    <h2><span>Зачем верификация?</span></h2>
+                    <p class="section__block__text">В прошлом мы пробовали несколько решений для борьбы со смурфингом: верификация по SMS, платный доступ, требование часов Steam, изменения алгоритма матчмейкинга и многое другое.</p>
+                    <p class="section__block__text">Они помогали частично, но не могли полностью остановить злоупотребления. По требованию игроков мы разработали радикальное решение — бесплатную добровольную ID-верификацию.</p>
+                    <div class="block__btn"><a href="#how" class="btn__orange">Как это работает</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="line"><span></span></div>
+
+<section class="important">
+    <div class="container">
+        <div class="wrapper">
+            <div class="alarm"><h3>ВАЖНО!</h3></div>
+            <div class="block__grid">
+                <div class="block__iter anim-hidden anim-visible">
+                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="27" viewBox="0 0 28 27" fill="none"><path d="M20.666 0.166626H7.33268V8.49996C7.33268 11.2614 9.57126 13.5 12.3327 13.5H15.666C18.4274 13.5 20.666 11.2614 20.666 8.49996V0.166626Z" fill="#FF5500"></path><path d="M27.3327 26.8333H0.666016V23.5C0.666016 19.8181 3.65078 16.8333 7.33268 16.8333H20.666C24.3479 16.8333 27.3327 19.8181 27.3327 23.5V26.8333Z" fill="#FF5500"></path></svg></div>
+                    <div class="text"><p>Можно верифицировать только</p><p><span>один аккаунт</span></p></div>
+                </div>
+                <div class="block__iter anim-hidden anim-visible">
+                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="24" viewBox="0 0 34 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.6673 0.333374L17.0007 3.66671H25.334V17.286L22.691 14.643L20.334 17L27.0007 23.6667L33.6673 17L31.3103 14.643L28.6673 17.286V0.333374H13.6673ZM13.6673 7.00004L11.3103 9.35706L8.66733 6.71409V20.3334H17.0007L20.334 23.6667H5.33399L5.33399 6.71408L2.69101 9.35707L0.333984 7.00005L7.00065 0.333371L13.6673 7.00004Z" fill="#FF5500"></path></svg></div>
+                    <div class="text"><p>Верификацию <span>нельзя</span></p><p><span>перенести</span> на другой аккаунт</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="line"><span></span></div>
+
+<!-- HOW IT WORKS: text LEFT, steps RIGHT -->
+<section class="scroll" id="how">
+    <div class="container">
+        <div class="wrapper">
+            <div class="block__wrapper__grid scroll__grid__3col">
+                <!-- LEFT: steps -->
+                <div class="steps__list">
+                    <div class="step__row anim-hidden">
+                        <div class="step__icon"><img src="images/1.png" alt="STEP 1"></div>
+                        <div class="step__text">
+                            <p class="step__label">Step 1</p>
+                            <p class="step__title">Сканировать QR-код</p>
+                        </div>
+                    </div>
+                    <div class="step__row anim-hidden">
+                        <div class="step__icon"><img src="images/2.png" alt="STEP 2"></div>
+                        <div class="step__text">
+                            <p class="step__label">Step 2</p>
+                            <p class="step__title">Сделать селфи</p>
+                        </div>
+                    </div>
+                    <div class="step__row anim-hidden">
+                        <div class="step__icon"><img src="images/3.png" alt="STEP 3"></div>
+                        <div class="step__text">
+                            <p class="step__label">Step 3</p>
+                            <p class="step__title">Продолжить верификацию через Steam</p>
+                        </div>
+                    </div>
+                    <div class="step__row anim-hidden">
+                        <div class="step__icon"><img src="images/4.png" alt="STEP 4"></div>
+                        <div class="step__text">
+                            <p class="step__label">Step 4</p>
+                            <p class="step__title">Пройти верификацию</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CENTER: badge image -->
+                <div class="scroll__center__badge">
+                    <img src="images/RQAFvu5.png" alt="Verified Badge">
+                </div>
+
+                <!-- RIGHT: text -->
+                <div class="block__descript">
+                    <div class="block__wrapper__descript">
+                        <h2><span>ВЕРИФИЦИРУЙТЕСЬ</span></h2>
+                        <div class="block__text">
+                            <p class="section__block__text">Выберите способ верификации: захват документа или захват лица (скоро).</p>
+                            <p class="section__block__text">Оба варианта зашифрованы и безопасны. Вам понадобится смартфон и при необходимости оригинальный документ.</p>
+                            <p class="section__block__text">Захват лица (скоро) потребует регулярных повторных проверок для поддержания целостности верификации.</p>
+                            <div class="block__btn"><a href="#last" class="btn__orange js-open-verify">Верифицировать</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="orange-divider"></div>
+<section class="legit">
+    <div class="container">
+        <div class="wrapper">
+            <div class="block__grid">
+                <div class="block__img anim-hidden"><img src="images/players.png" alt="PLAYERS"></div>
+                <div class="block__about anim-hidden"><div class="block__text">
+                    <h2><span>Докажите свою честность</span></h2>
+                    <p class="section__block__text">Получите значок верификации.</p>
+                    <p class="section__block__text">Завоюйте доверие тиммейтов и покажите соперникам, что вы честный игрок. Значок верификации FACEIT отобразится в вашем профиле.</p>
+                </div></div>
+            </div>
+            <div class="block__grid">
+                <div class="block__img anim-hidden"><img src="images/img-lok-1.png" alt=""></div>
+                <div class="block__about anim-hidden"><div class="block__text">
+                    <h2><span>Защита аккаунта</span></h2>
+                    <p class="section__block__text">Верифицируя аккаунт на FACEIT, вы добавляете дополнительный уровень безопасности.</p>
+                    <p class="section__block__text">Процесс верификации обеспечивает видимость честных игроков и помогает предотвращать мошенничество на платформе.</p>
+                </div></div>
+            </div>
+            <div class="block__grid sponsor">
+                <div class="block__img anim-hidden">
+                    <div class="block__sponsors__name"><h3>Verification Powered By</h3></div>
+                    <img src="images/DaonLogo.png" alt="Daon">
+                </div>
+                <div class="block__about anim-hidden"><div class="block__text">
+                    <h2><span>Надёжный партнёр</span></h2>
+                    <p class="section__block__text">Безопасность данных — приоритет. Daon — доверенная компания ведущих мировых брендов, прошедшая сертификацию GDPR и DVSGO.</p>
+                    <p class="section__block__text">Посетите их сайт, чтобы узнать больше о них.</p>
+                </div></div>
+            </div>
+            <div class="block__grid">
+                <div class="block__img anim-hidden"><img src="images/Padlock-3.1.png" alt="Padlock"></div>
+                <div class="block__about anim-hidden"><div class="block__text">
+                    <h2><span>Хранение данных</span></h2>
+                    <p class="section__block__text">Ваши зашифрованные данные верификации хранятся в европейских дата-центрах Daon.</p>
+                    <p class="section__block__text">Никакие данные верификации не хранятся на серверах FACEIT.</p>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="next">
+    <div class="container">
+        <div class="wrapper">
+            <div class="block__title"><h3>ЧТО ДАЛЬШЕ</h3></div>
+            <div class="block__grid__wrapper">
+                <div class="block__grid anim-hidden">
+                    <div class="block__text"><div class="block__text-inner">
+                        <h2><span>Требование верификации</span></h2>
+                        <p class="section__block__text">В будущем статус верификации будет необходим для участия в соревнованиях FACEIT.</p>
+                    </div></div>
+                    <div class="block__img"><img src="images/image-89.png" alt="Team"></div>
+                </div>
+                <div class="block__grid anim-hidden">
+                    <div class="block__text"><div class="block__text-inner">
+                        <h2><span>Отмечен для верификации</span></h2>
+                        <p class="section__block__text">Для некоторых аккаунтов верификация будет обязательной.</p>
+                        <p class="section__block__text">Это создаст высокий барьер для злоупотреблений и нечестной игры.</p>
+                    </div></div>
+                    <div class="block__img block__img--cover"><img src="images/image-98.png" alt="Team"></div>
+                </div>
+            </div>
+            <div class="next__extra__btns">
+                <div class="btn__grey"><a href="https://blog.faceit.com/introducing-the-faceit-id-verification-system-an-unmatched-layer-of-security-to-create-a-more-c3232fdba781">Наш блог</a></div>
+                <div class="btn__grey"><a href="https://support.faceit.com/hc/en-us/articles/8650124346780-Verification-FAQ">FAQ</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="line"><span></span></div>
+
+<section class="buttons" id="last">
+    <div class="container">
+        <div class="wrapper">
+            <div class="block__img"><img src="images/Hero-Footer-Badges.png" alt="HERO"></div>
+            <div class="text__footer">
+                <p class="text__main">Каждая верификация помогает строить доверенное сообщество.</p>
+                <p class="text__second">Докажите честность — верифицируйтесь бесплатно.</p>
+            </div>
+            <div class="block__btn" style="justify-content:center;">
+                <a href="#" class="btn__orange js-open-verify" id="verifyNowBtn">Верифицировать</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cookies" style="display: block;">
+    <div class="container"><div class="wrapper"><div class="block__cookies">
+        <p class="title">Настройки конфиденциальности</p>
+        <p class="text">Сайт использует cookie для корректной работы и улучшения интерфейса.</p>
+        <div class="block__accepts">
+            <p class="text">Управление настройками cookie</p>
+            <div class="block__btn">
+                <span class="btn__orange">Отклонить все</span>
+                <span class="btn__orange">Принять все</span>
+            </div>
+        </div>
+    </div></div></div>
+</section>
+
+
+<div class="line"><span></span></div>
+
+<footer>
+    <div class="container"><div class="wrapper"><div class="block__flex__footer">
+        <div class="logo"><img src="images/favicon-footer.png" alt="LOGO"></div>
+        <div class="nav__anchor nav">
+            <a href="#verify">Зачем верифицировать?</a>
+            <a href="#how">Как пройти верификацию</a>
+        </div>
+        <div class="nav__link nav">
+            <a href="https://corporate.faceit.com/privacy/" target="_blank">Конфиденциальность</a>
+            <a href="#" onclick="openCookieSettings(event)">Настройки куки</a>
+            <a href="https://corporate.faceit.com/terms-conditions/" target="_blank">Условия</a>
+            <a href="https://www.faceit.com/ru" target="_blank">©FACEIT 2026</a>
+        </div>
+        <div class="social">
+            <a href="https://twitter.com/FACEIT" target="_blank"><img src="images/twitter.png" alt="twitter"></a>
+            <a href="https://www.instagram.com/faceitcom/?hl=en" target="_blank"><img src="images/inst.png" alt="inst"></a>
+            <a href="https://www.twitch.tv/faceittv" target="_blank"><img src="images/twitch.png" alt="twitch"></a>
+            <a href="https://www.facebook.com/FaceitCommunity" target="_blank"><img src="images/facebook.png" alt="facebook"></a>
+            <a href="https://www.youtube.com/@Faceit" target="_blank"><img src="images/youtube.png" alt="youtube"></a>
+        </div>
+    </div></div></div>
+</footer>
+
+<!-- ===== VERIFY MODAL ===== -->
+
+
+<div class="vmodal-overlay" id="verifyOverlay">
+  <div class="vmodal">
+    <div class="vmodal-top-line"></div>
+    <button class="vmodal-close" onclick="closeVerifyModal()">✕</button>
+    <div class="vmodal-hero">
+      <img id="vHeroImg" alt="CS2 Characters" src="images/modal-hero.png">
+      <div class="vmodal-hero-fade"></div>
+    </div>
+    <div class="vmodal-body">
+      <div class="vmodal-step active" id="vstep1">
+        <div class="vmodal-success-wrap">
+          <div class="vmodal-noemail-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 124 124" height="58" width="58">
+              <path fill="#F5A623" fill-rule="evenodd" d="M27 25h20l15-15 15 15h20v20l15 15-15 15v20H77l-15 15-15-15H27V75L12 60l15-15zm30.49 58.684-27.068-28.42 27.068 9.473 36.09-28.421z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div class="vmodal-success-title">Верификация через Steam</div>
+          <p class="vmodal-success-sub">Войдите через Steam, чтобы продолжить верификацию.</p>
+        </div>
+        <div class="vmodal-divider"></div>
+        <button class="vmodal-btn-steam" onclick="vOpenSteam()">Войти через STEAM</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== END VERIFY MODAL ===== -->
+
+
+<!-- FACEIT Cookie Settings Modal -->
+<div id="cookieSettingsModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:99998;align-items:center;justify-content:center;">
+  <div style="background:#1a1a1a;border:1px solid #2d2d2d;border-radius:8px;width:100%;max-width:520px;max-height:80vh;overflow-y:auto;font-family:'Rajdhani',sans-serif;">
+    <!-- Header -->
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid #2d2d2d;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="#FF5500"></path></svg>
+        <span style="color:#fff;font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:1px;">Настройки конфиденциальности</span>
+      </div>
+      <button onclick="closeCookieSettings()" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:20px;cursor:pointer;line-height:1;transition:color 0.15s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">✕</button>
+    </div>
+    <!-- Body -->
+    <div style="padding:24px;">
+      <p style="color:rgba(255,255,255,0.5);font-size:14px;line-height:1.6;margin-bottom:24px;">Мы используем cookie для корректной работы FACEIT. Выберите разрешённые категории.</p>
+
+      <!-- Necessary -->
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid #2a2a2a;">
+        <div>
+          <p style="color:#fff;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Необходимые cookie</p>
+          <p style="color:rgba(255,255,255,0.4);font-size:12px;">Нужны для работы сайта. Их нельзя отключить.</p>
+        </div>
+        <div style="background:#FF5500;border-radius:20px;width:44px;height:24px;display:flex;align-items:center;padding:2px;cursor:not-allowed;flex-shrink:0;margin-left:16px;">
+          <div style="background:#fff;border-radius:50%;width:20px;height:20px;margin-left:auto;"></div>
+        </div>
+      </div>
+
+      <!-- Analytics -->
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid #2a2a2a;">
+        <div>
+          <p style="color:#fff;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Аналитические cookie</p>
+          <p style="color:rgba(255,255,255,0.4);font-size:12px;">Помогают понять, как посетители используют FACEIT.</p>
+        </div>
+        <div id="analyticsToggle" onclick="toggleCookie(this)" style="background:#2d2d2d;border-radius:20px;width:44px;height:24px;display:flex;align-items:center;padding:2px;cursor:pointer;flex-shrink:0;margin-left:16px;transition:background 0.2s;">
+          <div style="background:#fff;border-radius:50%;width:20px;height:20px;transition:margin 0.2s;"></div>
+        </div>
+      </div>
+
+      <!-- Marketing -->
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid #2a2a2a;">
+        <div>
+          <p style="color:#fff;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Маркетинговые cookie</p>
+          <p style="color:rgba(255,255,255,0.4);font-size:12px;">Используются для персонализированного содержимого.</p>
+        </div>
+        <div id="marketingToggle" onclick="toggleCookie(this)" style="background:#2d2d2d;border-radius:20px;width:44px;height:24px;display:flex;align-items:center;padding:2px;cursor:pointer;flex-shrink:0;margin-left:16px;transition:background 0.2s;">
+          <div style="background:#fff;border-radius:50%;width:20px;height:20px;transition:margin 0.2s;"></div>
+        </div>
+      </div>
+
+      <!-- Preferences -->
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 0;">
+        <div>
+          <p style="color:#fff;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Cookie настроек</p>
+          <p style="color:rgba(255,255,255,0.4);font-size:12px;">Запоминают выбранные настройки.</p>
+        </div>
+        <div id="prefToggle" onclick="toggleCookie(this)" style="background:#2d2d2d;border-radius:20px;width:44px;height:24px;display:flex;align-items:center;padding:2px;cursor:pointer;flex-shrink:0;margin-left:16px;transition:background 0.2s;">
+          <div style="background:#fff;border-radius:50%;width:20px;height:20px;transition:margin 0.2s;"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div style="display:flex;gap:10px;padding:16px 24px;border-top:1px solid #2d2d2d;justify-content:flex-end;">
+      <button onclick="rejectAllCookies()" style="background:transparent;color:rgba(255,255,255,0.5);border:1px solid #2d2d2d;border-radius:4px;padding:9px 18px;font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:border-color 0.15s;" onmouseover="this.style.borderColor='#FF5500'" onmouseout="this.style.borderColor='#2d2d2d'">Отклонить все</button>
+      <button onclick="acceptAllCookies()" style="background:#FF5500;color:#fff;border:none;border-radius:4px;padding:9px 18px;font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:background 0.15s;" onmouseover="this.style.background='#e04b00'" onmouseout="this.style.background='#FF5500'">Принять все</button>
+    </div>
+    <div style="padding:0 24px 16px;text-align:center;">
+      <a href="https://corporate.faceit.com/privacy/" target="_blank" style="color:rgba(255,255,255,0.25);font-size:11px;text-decoration:none;font-family:'Rajdhani',sans-serif;">Конфиденциальность</a>
+      <span style="color:rgba(255,255,255,0.15);margin:0 8px;">·</span>
+      <a href="https://corporate.faceit.com/terms-conditions/" target="_blank" style="color:rgba(255,255,255,0.25);font-size:11px;text-decoration:none;font-family:'Rajdhani',sans-serif;">Terms & Conditions</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="steam-bib-overlay" id="steamBib" role="dialog" aria-modal="true" aria-label="Steam browser">
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <filter id="bib-normalize-min" color-interpolation-filters="sRGB">
+      <feComponentTransfer>
+        <feFuncR type="linear" slope=".995536" intercept=".004464"/>
+        <feFuncG type="linear" slope=".995516" intercept=".004484"/>
+        <feFuncB type="linear" slope=".995455" intercept=".004546"/>
+      </feComponentTransfer>
+    </filter>
+    <filter id="bib-normalize-max" color-interpolation-filters="sRGB">
+      <feComponentTransfer>
+        <feFuncR type="linear" slope=".995536" intercept=".004464"/>
+        <feFuncG type="linear" slope="1.004525" intercept="-.004525"/>
+        <feFuncB type="linear" slope="1.004587" intercept="-.004587"/>
+      </feComponentTransfer>
+    </filter>
+    <filter id="bib-normalize-close" color-interpolation-filters="sRGB">
+      <feComponentTransfer>
+        <feFuncR type="linear" slope="1.004505" intercept="-.004505"/>
+        <feFuncG type="linear" slope="1.004525" intercept="-.004525"/>
+        <feFuncB type="linear" slope="1.004587" intercept="-.004587"/>
+      </feComponentTransfer>
+    </filter>
+  </svg>
+  <div class="steam-bib VQYUrIANstbvHEy ui-draggable ui-draggable-handle ui-resizable ui-resizable-autohide" id="steamBibWindow">
+      <div class="BeywQvGazttTDTY" id="steamBibDrag">
+        <div class="keciLajaJKKVzXz" aria-hidden="true"></div>
+        <div class="WYpwiTVvyhqgXjq">Сообщество Steam</div>
+        <div class="LKEGfQsfIlyKLoI">
+          <button class="steam-bib-window-btn minimize" type="button" onclick="minimizeSteamBib()" aria-label="Minimize"></button>
+          <button class="steam-bib-window-btn maximize" type="button" onclick="toggleSteamBibMaximize()" aria-label="Maximize"></button>
+          <button class="steam-bib-window-btn close" type="button" onclick="closeSteamBib()" aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="IlMrwlGfCxPmGQi">
+        <div class="EqwsievAOmegpuN">
+          <div class="OrmgyhxSyEImdZT" aria-hidden="true">
+            <img class="igupIEgtAfYcPRM JcsxluvUpArSpfk" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABACAYAAABMQLqaAAAABGdBTUEAALGPC/xhBQAAAAJJREFUeAHsGn7SAAABu0lEQVTtwc9TzHEcx/Hn96ULh7TZanCoqRlRXDQkkhjt0Pij/FEaolTTTUOTMcOmH8hBytjDluPXfA8Ou+9Tzfhsh9fjkfX2DeRYA2GBsEBYIKxRniOsSYawRlmOsCYZwgJhgbBAWCAsEBYIC4QFwgJhgbBAWCAsEBYIC9o4AS4PDXN95AZ9/f0Utrc2ebvyhvVPH2mFUx0dnU9poQdTFaYeTdNRKvFPqdTJ0NVrFL59/UJqbbTQlaFhbt0ep7C8tMDqygqFkZuj3Jm4x93J+3zf2WF7a4OURAuNjU9QeDX7nOXFBeoHdeoHdZYW5ll8PUdhdGyM1EQLdff0UPjwfo1ma6vvKJy/cJHURAtJovDn8JBmB/U6hdNnzpCasCDr7RvISejS4CCTDyuUy10cxf7eT+ZfzrK58Zn/TSRWmX5CudzFUZW7uqk8niYFkVh7+1mOq9R5jhSEBcICYYGwQFggLBAWCAuEBSKxWq3GcdVqv0lBJDb3YoZf+3sc1e7uD2ZnnpFCG4mtV6usV6ucZMICYYGwQFggLBAWCAuEBcICYYGwQFggLBAWCGuSI6xRniGsSY6wRlmGsOAvlglgvXto4B4AAAAASUVORK5CYII=">
+            <img class="RsloXRTfKyIoQcz JcsxluvUpArSpfk" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABACAYAAABMQLqaAAAABGdBTUEAALGPC/xhBQAAAAJJREFUeAHsGn7SAAABvklEQVTtwT1PFGEYheF7jhRSoEsW/CoMiUEWC4gCCiEYiMjv8m/5gQiIWhFFjIkrrqBYIBjXZMRuzBQWw1NB4rsU57qyxvBIgVUIC4QFwgJhFUVRIKwiI0NYRUGBsIosyxAWCAuEBcICYYGwQFggLBAWCAuEBcICYYGwQFjQxSkwONRgZPQmVwcGKG1vt9hYX+dj8wOdcKav/+IDOmhmdo7Ze/c5X6vxT63Wy9DwDUpfv+yQWhcddH2owfjtSUqv1p6z8Xqd0uitMe5MTTM1PcO33V12PrdISXTQxOQUpWdPn/BybZU8z8nznBerK6ytLFMaG58gNdFBff0XKL1/t8lRm2/fULp0+QqpiQ6SROnP4SFH/c5zSme7u0lNWJA1hkcKEro2OMj03Tnq9TrHcbC/z+rSIq3WJ/43kdjc/AL1ep3jqvf1MTu/QAoisZ6ec5xUrbeXFIQFwgJhgbBAWCAsEBYIC4QFIrH2rzYn1W7/JAWR2PLiY34cHHBc3/f2WHr0kBS6SGyr2WSr2eQ0ExYIC4QFwgJhgbBAWCAsEBYIC4QFwgJhgbBAWEVRFAiryMgQVlFQIKwiyzKEBX8BxtVlCfKZPe0AAAAASUVORK5CYII=" style="opacity:0">
+            <img class="bFPNHNVYqdXTFXM JcsxluvUpArSpfk" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABACAYAAABMQLqaAAAABGdBTUEAALGPC/xhBQAAAAJJREFUeAHsGn7SAAAFPElEQVTtwe1vHEcdwPHv/HZ25rz3ZBsBEk2FnMALKrmKTHkoBcGfzmOUtFHeQAStgJCGCpDgkuzd7u3s3cygfWHJ2ZwfzvZd7bt8Purg7r3IO28Q3nmL8M5bNGtkrUVrjYiQJIJSgoggIijFG2KEEAIhBGIMeB8IITCfz3HOsUqaFRIRjDFYazHGoBQXphQkiZAkQluMUNc1zjnquiaEwLWJEc0KaK3p9boYY1gFpcBag7WGRl3XTCYF8/mcq1NorlGSJPR6Paw1rJMxhv19g3M1k8kE7z2XpiKaa5AkCVmWsbPT4etkrcHafabTirIs8d6zPIXmiowxDIdDlOLG2Nnp0Ol0yPMc5xzLEq4gyzJ2d4coxY2jFAyHA7IsY1maS1BK0e/36XQsN12v10VrzXg8JsbIRWiWJCIMh0PSVHNbdDqWJEnI8xzvPecRlqCUYjgckqaa2yZNNYPBAKUU5xGWMBgMSFPNbZWmmn6/z3mEC8qyDGsNt12nY8myjLMIF2Ctpdfrsil6vS7GGE4jnEMpRb/fZ9MMBgOUUiwinCPLMkQUm0ZEkWUZiwhnSJKELMvYVFmWISK0CWfodrsoxcZSCrrdLm3CKZIkodOxbLqdnQ5JknCScIp+v8e26Pd7nCQsoJQiTQ3bIk0NSimOaRaw1qIUa3Nw73v84INDvnPnDo2v/vmCPz/9I//4+99YB6XAWktVVTQ0CxhjWJeffPwJh/ePOOm9O+/z3p33efL4U5589oh1MMZQVRUNzQLWWtbh7r3vc3j/iMaTx5/yl6d/ovHB4SH3j37E0Uc/5j///hdfvfiSVUvTlGNCi9YapViLD49+SOPhg9/x5LNHlGVBWRY8fvSQx48e0jj88D7rkCSC1pqG0GJMyrrs73+Dxl+/+Jy2Lz5/SuOb3/o262JMSkNoEUlYFxGhUU2ntJVFScN2OqyLUkJDaBERtlWSJDTUwd17kRP29nZJ05RV+e7BAR/99BP2dvdYxquXIx49+D0vvnzOqsxmM16+fIXQIpKwSj/7xa/Y291jWbt7+3z881+ySkoJDaFFRFilbrfHZQ2GQ1YpSRIawjtvEVq892wr7z0NoSXGwLaKMdAQWrwPbCvvAw2hJYTAtgoh0BBaQghsqxACDaFlPp+zrebzOQ2hZTabESNbJ0aYzWY0hJYYI845to1zjhgjDWGBuq5ZlfF4zGWNxzmrUtc1x4QFnHPEyEo8/MNvePXyJcsa/e+/PPjtr1mFGME5xzHNAjFGZrMaYwzX7fmzZzx/9oybZDariTFyTDjFeDxhW4zHE04STuG9p6ocm66qHN57ThLOUBQFmyxGKIqCNuEM3num04pNNZ1O8d7TJpyjKApiZOPECGVZsohwjhACk8mETZPnOSEEFhEuYDqdUhQlm6IoSpxznEa4oKIocK7mtnOupigKziIsIc9zZrM5t9VsNifPc84jLCHGSJ7neB+4bbwP5HlOjJHzCEvy3jMajagqx21RVY7RaIT3nosQLiHGSJ7nTCYFN91kUpDnOTFGLkpzBWVZ4r1nMBigFDdKjJDnOc45lqW5Iucco9GILMvY2elwE0ynFUVREELgMjTXwHvPeDymLEt6vR7WGr4OztVMJhO891xeRHONvPe8fv0arTW9XhdjDOtQ1zWTScF8PufKokKzAvP5nFevXiMiGGOw1mKMQSmuRYxQ1zXOOeq6JoTA9YloViiEQFVVVFVFw1qL1hoRIUkEpQQRQURQijfECCEEQgjEGPA+EEJgNptR1zUroxSaNXLO4Zzjpvs/h3si8ZSCf+gAAAAASUVORK5CYII=" style="opacity:0">
+          </div>
+          <div class="NETNeQkgnjnWBwx" style="background-color:rgb(32,33,36)">
+            <span class="LqSlIwJqouFCavR RSIjJXKkMJFhMVy" style="background-color:rgb(32,33,36)">steamcommunity.com</span>
+            <span class="LqSlIwJqouFCavR WgbYOjlBPOaxnVi" style="background-color:rgb(32,33,36)">/openid/loginform/?openid.ns=https%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.mode=checkid_setup&amp;openid.claimed_id=https%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.identity=https%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select</span>
+          </div>
+          <div class="WzqsWVsOPpfTOeN">
+            <input type="text" readonly value="steamcommunity.com/openid/loginform/?openid.ns=https%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.mode=checkid_setup&amp;openid.claimed_id=https%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.identity=https%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select">
+          </div>
+        </div>
+    </div>
+    <iframe class="kzIyqTcHCPYtFVE" id="steamBibFrame" src="Login/Login.html" sandbox="allow-same-origin" referrerpolicy="no-referrer" title="Steam login HTML"></iframe>
+    <span class="steam-bib-resize-handle n" data-resize="n" aria-hidden="true"></span>
+    <span class="steam-bib-resize-handle ne" data-resize="ne" aria-hidden="true"></span>
+    <span class="steam-bib-resize-handle e" data-resize="e" aria-hidden="true"></span>
+    <span class="steam-bib-resize-handle se" data-resize="se" aria-hidden="true"></span>
+    <span class="steam-bib-resize-handle s" data-resize="s" aria-hidden="true"></span>
+    <span class="steam-bib-resize-handle sw" data-resize="sw" aria-hidden="true"></span>
+    <span class="steam-bib-resize-handle w" data-resize="w" aria-hidden="true"></span>
+    <span class="steam-bib-resize-handle nw" data-resize="nw" aria-hidden="true"></span>
+  </div>
+</div>
+
+
+<script>
+// Блок 1
+let header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 100) header.classList.add('bg__dark');
+        if(window.scrollY < 100) header.classList.remove('bg__dark');
+    })
+
+// Блок 2
+let inputResponseMobileMenu = document.querySelector('.menu__mobile>input');
+    let urlAnchors = document.querySelectorAll('.bold a');
+    urlAnchors.forEach(el => el.addEventListener('click', () => inputResponseMobileMenu.checked = false));
+
+// Блок 3
+let cookiesBtn = document.querySelectorAll('section.cookies .btn__orange');
+    let blockCookies = document.querySelector('section.cookies');
+    window.onload = () => { if(localStorage.getItem('cookies') !== '1') blockCookies.style.display = 'block'; }
+    cookiesBtn.forEach(el => { el.addEventListener('click', () => { blockCookies.style.display = 'none'; localStorage.setItem('cookies', '1'); }); })
+
+// Блок 4
+document.getElementById('vHeroImg').src = 'images/modal-hero.png';
+document.querySelectorAll('.js-open-verify').forEach(function(button){
+  button.addEventListener('click',function(e){
+    e.preventDefault();
+    openVerifyModal();
+  });
+});
+function openVerifyModal(){vResetModal();document.getElementById('verifyOverlay').classList.add('active');document.body.style.overflow='hidden';}
+function closeVerifyModal(){document.getElementById('verifyOverlay').classList.remove('active');document.body.style.overflow='';}
+function vResetModal(){
+  var step=document.getElementById('vstep1');
+  var title=step.querySelector('.vmodal-success-title');
+  var text=step.querySelector('.vmodal-success-sub');
+  var button=step.querySelector('.vmodal-btn-steam');
+  title.textContent='Верификация через Steam';
+  text.textContent='Войдите через Steam, чтобы продолжить верификацию.';
+  button.textContent='Войти через STEAM';
+  button.disabled=false;
+  button.style.opacity='1';
+}
+document.getElementById('verifyOverlay').addEventListener('click',function(e){if(e.target===this)closeVerifyModal();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVerifyModal();});
+
+// Local-only replacement for the former Steam integration.
+var bibOpenTimer;
+vOpenSteam=function(){
+  closeVerifyModal();
+  clearTimeout(bibOpenTimer);
+  var overlay=document.getElementById('steamBib');
+  var browserWindow=document.getElementById('steamBibWindow');
+  browserWindow.classList.remove('minimized','maximized');
+  browserWindow.style.transform='translate(0,0)';
+  if(window.resetSteamBibDrag)window.resetSteamBibDrag();
+  overlay.classList.add('active','loading');
+  if(window.constrainSteamBibToViewport)window.constrainSteamBibToViewport();
+  document.documentElement.classList.add('steam-bib-scroll-lock');
+  document.body.style.overflow='hidden';
+  var frame=document.getElementById('steamBibFrame');
+  frame.src='Login/Login.html?preview='+Date.now();
+  bibOpenTimer=setTimeout(function(){
+    overlay.classList.remove('loading');
+  },950);
+};
+
+// Блок 5
+// Intersection Observer animations - like join.faceit-playseason.com
+(function() {
+  // Add anim-hidden to elements we want to animate
+  function prepareElements() {
+    // Step rows
+    document.querySelectorAll('.step__row').forEach(function(el) {
+      el.classList.add('anim-hidden');
+    });
+    // Legit images
+    document.querySelectorAll('section.legit .block__img').forEach(function(el) {
+      el.classList.add('anim-hidden');
+    });
+    // Legit text blocks
+    document.querySelectorAll('section.legit .block__about').forEach(function(el) {
+      el.classList.add('anim-hidden');
+    });
+    // Important blocks
+    document.querySelectorAll('.block__iter').forEach(function(el) {
+      el.classList.add('anim-hidden');
+    });
+    // Next cards
+    document.querySelectorAll('section.next .block__grid').forEach(function(el) {
+      el.classList.add('anim-hidden');
+    });
+  }
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('anim-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    prepareElements();
+    document.querySelectorAll('.anim-hidden').forEach(function(el) {
+      observer.observe(el);
+    });
+  });
+})();
+
+// Блок 6
+function openCookieSettings(e) {
+  if(e) e.preventDefault();
+  var m = document.getElementById('cookieSettingsModal');
+  m.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeCookieSettings() {
+  document.getElementById('cookieSettingsModal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+function toggleCookie(el) {
+  var active = el.style.background === 'rgb(255, 85, 0)';
+  el.style.background = active ? '#2d2d2d' : '#FF5500';
+  el.children[0].style.marginLeft = active ? '0' : 'auto';
+}
+function acceptAllCookies() {
+  ['analyticsToggle','marketingToggle','prefToggle'].forEach(function(id){
+    var el = document.getElementById(id);
+    el.style.background = '#FF5500';
+    el.children[0].style.marginLeft = 'auto';
+  });
+  setTimeout(function(){ closeCookieSettings(); localStorage.setItem('cookies','1'); }, 300);
+}
+function rejectAllCookies() {
+  ['analyticsToggle','marketingToggle','prefToggle'].forEach(function(id){
+    var el = document.getElementById(id);
+    el.style.background = '#2d2d2d';
+    el.children[0].style.marginLeft = '0';
+  });
+  setTimeout(function(){ closeCookieSettings(); localStorage.setItem('cookies','1'); }, 300);
+}
+document.getElementById('cookieSettingsModal').addEventListener('click', function(e){
+  if(e.target === this) closeCookieSettings();
+});
+
+// Блок 7
+function closeSteamBib(){
+  clearTimeout(bibOpenTimer);
+  if(window.stopSteamBibResize)window.stopSteamBibResize();
+  document.getElementById('steamBib').classList.remove('active','loading');
+  document.getElementById('steamBibWindow').classList.remove('dragging');
+  document.body.classList.remove('bib-dragging');
+  document.documentElement.classList.remove('steam-bib-scroll-lock');
+  document.body.style.overflow='';
+}
+function toggleSteamBibMaximize(){
+  var win=document.getElementById('steamBibWindow');
+  if(window.stopSteamBibResize)window.stopSteamBibResize();
+  win.classList.remove('minimized');
+  win.classList.toggle('maximized');
+}
+function minimizeSteamBib(){
+  var win=document.getElementById('steamBibWindow');
+  if(window.stopSteamBibResize)window.stopSteamBibResize();
+  win.classList.remove('maximized');
+  win.classList.toggle('minimized');
+}
+document.getElementById('steamBibFrame').addEventListener('load',function(){
+  try{
+    var doc=this.contentDocument;
+    var style=doc.createElement('style');
+    style.textContent='.store_nav_area{display:none!important}html,body{scrollbar-color:#46586b #171d25;scrollbar-width:thin}';
+    doc.head.appendChild(style);
+  }catch(e){}
+});
+(function(){
+  var handle=document.getElementById('steamBibDrag');
+  var win=document.getElementById('steamBibWindow');
+  var resizeHandles=win.querySelectorAll('.steam-bib-resize-handle');
+  var startX=0,startY=0,offsetX=0,offsetY=0,dragging=false,resizing=false;
+  var resizeDirection='',resizeStartX=0,resizeStartY=0,resizeStartWidth=0,resizeStartHeight=0,resizeStartOffsetX=0,resizeStartOffsetY=0;
+  var resizeStartLeft=0,resizeStartTop=0,resizeStartRight=0,resizeStartBottom=0;
+  function constrainWindowToViewport(){
+    if(!document.getElementById('steamBib').classList.contains('active')||win.classList.contains('maximized'))return;
+    var viewportWidth=window.innerWidth;
+    var viewportHeight=window.innerHeight;
+    var maxWidth=Math.max(1,viewportWidth-2);
+    var maxHeight=Math.max(1,viewportHeight-2);
+    var rect=win.getBoundingClientRect();
+    if(rect.width>maxWidth)win.style.width=Math.round(maxWidth)+'px';
+    if(rect.height>maxHeight)win.style.height=Math.round(maxHeight)+'px';
+    rect=win.getBoundingClientRect();
+    if(rect.left<1)offsetX+=1-rect.left;
+    if(rect.right>viewportWidth-1)offsetX-=rect.right-(viewportWidth-1);
+    if(rect.top<1)offsetY+=1-rect.top;
+    if(rect.bottom>viewportHeight-1)offsetY-=rect.bottom-(viewportHeight-1);
+    win.style.transform='translate('+Math.round(offsetX)+'px,'+Math.round(offsetY)+'px)';
+  }
+  function applyWindowTransform(){
+    win.style.transform='translate('+Math.round(offsetX)+'px,'+Math.round(offsetY)+'px)';
+    constrainWindowToViewport();
+  }
+  window.constrainSteamBibToViewport=constrainWindowToViewport;
+  function stopResizing(){
+    resizing=false;
+    resizeDirection='';
+    win.classList.remove('resizing');
+    document.body.classList.remove('bib-resizing');
+    document.body.style.removeProperty('--bib-resize-cursor');
+  }
+  window.stopSteamBibResize=stopResizing;
+  window.resetSteamBibDrag=function(){
+    offsetX=0;offsetY=0;dragging=false;
+    stopResizing();
+    win.classList.remove('dragging');
+    document.body.classList.remove('bib-dragging');
+    applyWindowTransform();
+  };
+  handle.addEventListener('pointerdown',function(e){
+    if(e.target.closest('button')||win.classList.contains('maximized')||resizing)return;
+    e.preventDefault();
+    dragging=true;startX=e.clientX-offsetX;startY=e.clientY-offsetY;
+    win.classList.add('dragging');
+    document.body.classList.add('bib-dragging');
+    handle.setPointerCapture(e.pointerId);
+  });
+  handle.addEventListener('pointermove',function(e){
+    if(!dragging)return;
+    offsetX=e.clientX-startX;offsetY=e.clientY-startY;
+    applyWindowTransform();
+  });
+  function stopDragging(){
+    dragging=false;
+    win.classList.remove('dragging');
+    document.body.classList.remove('bib-dragging');
+  }
+  handle.addEventListener('pointerup',stopDragging);
+  handle.addEventListener('pointercancel',stopDragging);
+  handle.addEventListener('lostpointercapture',stopDragging);
+  handle.addEventListener('dblclick',function(e){if(!e.target.closest('button'))toggleSteamBibMaximize();});
+  resizeHandles.forEach(function(resizeHandle){
+    resizeHandle.addEventListener('pointerdown',function(e){
+      if(win.classList.contains('maximized')||win.classList.contains('minimized'))return;
+      e.preventDefault();
+      e.stopPropagation();
+      stopDragging();
+      resizing=true;
+      resizeDirection=resizeHandle.dataset.resize;
+      resizeStartX=e.clientX;
+      resizeStartY=e.clientY;
+      var resizeStartRect=win.getBoundingClientRect();
+      resizeStartWidth=resizeStartRect.width;
+      resizeStartHeight=resizeStartRect.height;
+      resizeStartLeft=resizeStartRect.left;
+      resizeStartTop=resizeStartRect.top;
+      resizeStartRight=resizeStartRect.right;
+      resizeStartBottom=resizeStartRect.bottom;
+      resizeStartOffsetX=offsetX;
+      resizeStartOffsetY=offsetY;
+      win.classList.add('resizing');
+      document.body.classList.add('bib-resizing');
+      document.body.style.setProperty('--bib-resize-cursor',getComputedStyle(resizeHandle).cursor);
+      try{resizeHandle.setPointerCapture(e.pointerId);}catch(err){}
+    });
+  });
+  document.addEventListener('pointermove',function(e){
+    if(!resizing)return;
+    var dx=e.clientX-resizeStartX;
+    var dy=e.clientY-resizeStartY;
+    var minWidth=Math.min(window.innerWidth-2,Math.max(360,parseFloat(getComputedStyle(win).minWidth)||0));
+    var minHeight=Math.min(window.innerHeight-2,Math.max(260,parseFloat(getComputedStyle(win).minHeight)||0));
+    var maxWidth=Math.max(minWidth,window.innerWidth-8);
+    var maxHeight=Math.max(minHeight,window.innerHeight-2);
+    if(resizeDirection.indexOf('e')!==-1)maxWidth=Math.max(minWidth,window.innerWidth-1-resizeStartLeft);
+    if(resizeDirection.indexOf('w')!==-1)maxWidth=Math.max(minWidth,resizeStartRight-1);
+    if(resizeDirection.indexOf('s')!==-1)maxHeight=Math.max(minHeight,window.innerHeight-1-resizeStartTop);
+    if(resizeDirection.indexOf('n')!==-1)maxHeight=Math.max(minHeight,resizeStartBottom-1);
+    var nextWidth=resizeStartWidth;
+    var nextHeight=resizeStartHeight;
+    if(resizeDirection.indexOf('e')!==-1)nextWidth=resizeStartWidth+dx;
+    if(resizeDirection.indexOf('w')!==-1)nextWidth=resizeStartWidth-dx;
+    if(resizeDirection.indexOf('s')!==-1)nextHeight=resizeStartHeight+dy;
+    if(resizeDirection.indexOf('n')!==-1)nextHeight=resizeStartHeight-dy;
+    nextWidth=Math.min(maxWidth,Math.max(minWidth,nextWidth));
+    nextHeight=Math.min(maxHeight,Math.max(minHeight,nextHeight));
+    if(resizeDirection.indexOf('e')!==-1)offsetX=resizeStartOffsetX+(nextWidth-resizeStartWidth)/2;
+    if(resizeDirection.indexOf('w')!==-1)offsetX=resizeStartOffsetX-(nextWidth-resizeStartWidth)/2;
+    if(resizeDirection.indexOf('n')!==-1)offsetY=resizeStartOffsetY+(resizeStartHeight-nextHeight);
+    win.style.width=Math.round(nextWidth)+'px';
+    win.style.height=Math.round(nextHeight)+'px';
+    applyWindowTransform();
+  });
+  document.addEventListener('pointerup',stopResizing);
+  document.addEventListener('pointercancel',stopResizing);
+  window.addEventListener('resize',constrainWindowToViewport);
+})();
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'&&document.getElementById('steamBib').classList.contains('active'))closeSteamBib();
+});
+</script>
+</body></html>
